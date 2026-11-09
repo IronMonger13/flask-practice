@@ -18,7 +18,7 @@ def expenses():
     return "<h1>Your expenses</h1>"
 
 
-@app.route("/add_expense")
+@app.route("/add-expense")
 def add_expense():
     if request.method == "POST":
         return "Expense saved"
