@@ -21,10 +21,34 @@ def expenses():
     return "<h1>Your expenses</h1>"
 
 
+# VIEW EXPENSE
+@app.route("/expenses/<int:expense_id>")
+def view_expense(expense_id):
+    return f"<h1>Expense ID: {expense_id}</h1>"
+
+
 # ADD EXPENSES
-@app.route("/add-expense")
+@app.route("/add-expense", methods=["POST"])
 def add_expense():
     return "<h1>Add expense</h1>"
+
+
+# EDIT EXPENSE
+@app.route("/expenses/<int:expense_id>/edit", methods=["POST"])
+def edit_expense(expense_id):
+    return f"<h1>Edit Expense with ID: {expense_id}</h1>"
+
+
+# DELETE EXPENSE
+@app.route("/expenses/<int:expense_id>/delete", methods=["POST"])
+def delete_expense(expense_id):
+    return f"<h1>Delete Expense with ID: {expense_id}</h1>"
+
+
+# FILTER EXPENSE BY CATEGORY
+@app.route("/expenses/category/<string:category_name>")
+def expenses_by_category(category_name):
+    return f"<h1>Expenses in {category_name}</h1>"
 
 
 # REGISTER USER
